@@ -16,4 +16,4 @@ This is a web application for managing and viewing cricket match statistics, inc
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cricket_score_app.git
+   git clone https://github.com/NaveenKumariitb/cricket_score_app.git
