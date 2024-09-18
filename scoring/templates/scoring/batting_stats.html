@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batting Stats</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Batting Stats</h1>
+    <div>
+        <a href="{% url 'batting_stat_detail' 'total_runs' %}" class="btn">Total Runs</a>
+        <a href="{% url 'batting_stat_detail' 'strike_rate' %}" class="btn">Strike Rate</a>
+        <a href="{% url 'batting_stat_detail' 'batting_avg' %}" class="btn">Batting Average</a>
+        <a href="{% url 'batting_stat_detail' 'highest_score' %}" class="btn">Highest Score</a>
+    </div>
+    <a href="{% url 'view_stats' %}" class="btn">Back to View Stats</a>
+</body>
+</html>

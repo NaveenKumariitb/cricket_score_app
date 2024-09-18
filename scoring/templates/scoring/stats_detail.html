@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ stat_title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ stat_label }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                {% if stat_type == 'total_runs' %}
+                    <th>Total Runs</th>
+                {% elif stat_type == 'strike_rate' %}
+                    <th>Strike Rate</th>
+                {% elif stat_type == 'batting_avg' %}
+                    <th>Batting Average</th>
+                {% elif stat_type == 'highest_score' %}
+                    <th>Highest Score</th>
+                {% elif stat_type == 'total_wickets' %}
+                    <th>Total Wickets</th>
+                {% elif stat_type == 'economy_rate' %}
+                    <th>Economy Rate</th>
+                {% elif stat_type == 'bowling_avg' %}
+                    <th>Bowling Average</th>
+                {% elif stat_type == 'best_bowling_figure' %}
+                    <th>Best Bowling Figure</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                {% if stat_type == 'total_runs' %}
+                    <td>{{ player.total_runs }}</td>
+                {% elif stat_type == 'strike_rate' %}
+                    <td>{{ player.strike_rate }}</td>
+                {% elif stat_type == 'batting_avg' %}
+                    <td>{{ player.batting_avg }}</td>
+                {% elif stat_type == 'highest_score' %}
+                    <td>{{ player.highest_score }}</td>
+                {% elif stat_type == 'total_wickets' %}
+                    <td>{{ player.total_wickets }}</td>
+                {% elif stat_type == 'economy_rate' %}
+                    <td>{{ player.economy_rate }}</td>
+                {% elif stat_type == 'bowling_avg' %}
+                    <td>{{ player.bowling_avg }}</td>
+                {% elif stat_type == 'best_bowling_figure' %}
+                    <td>{{ player.best_bowling_figure }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'view_stats' %}" class="btn">Back to View Stats</a>
+</body>
+</html>

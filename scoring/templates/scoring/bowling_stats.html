@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowling Stats</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Bowling Stats</h1>
+    <div>
+        <a href="{% url 'bowling_stat_detail' 'total_wickets' %}" class="btn">Total Wickets</a>
+        <a href="{% url 'bowling_stat_detail' 'economy_rate' %}" class="btn">Economy Rate</a>
+        <a href="{% url 'bowling_stat_detail' 'bowling_avg' %}" class="btn">Bowling Average</a>
+        <a href="{% url 'bowling_stat_detail' 'best_bowling_figure' %}" class="btn">Best Bowling Figure</a>
+    </div>
+    <a href="{% url 'view_stats' %}" class="btn">Back to View Stats</a>
+</body>
+</html>
+
+

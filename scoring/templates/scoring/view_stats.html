@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stats</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>View Stats</h1>
+    <div>
+        <h2>Batting Stats</h2>
+        <a href="{% url 'batting_stats' %}" class="btn">View Batting Stats</a>
+    </div>
+    <div>
+        <h2>Bowling Stats</h2>
+        <a href="{% url 'bowling_stats' %}" class="btn">View Bowling Stats</a>
+    </div>
+</body>
+</html>

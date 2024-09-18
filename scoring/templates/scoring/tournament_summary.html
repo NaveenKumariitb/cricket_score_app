@@ -1,0 +1,33 @@
+
+
+<h2>Tournament Summary</h2>
+<p>Tournament ID: {{ tournament.tournament_id }}</p>
+<h3>Matches</h3>
+<table>
+    <tr>
+        <th>Match ID</th>
+        <th>Player</th>
+        <th>Runs Scored</th>
+        <th>Balls Faced</th>
+        <th>Is Out</th>
+        <th>Balls Bowled</th>
+        <th>Runs Conceded</th>
+        <th>Wickets Taken</th>
+        <th>Common Player</th>
+        <th>Match Won</th>
+    </tr>
+    {% for match in matches %}
+    <tr>
+        <td>{{ match.match_id }}</td>
+        <td>{{ match.player.name }}</td>
+        <td>{{ match.runs_scored }}</td>
+        <td>{{ match.balls_faced }}</td>
+        <td>{{ match.is_out }}</td>
+        <td>{{ match.balls_bowled }}</td>
+        <td>{{ match.runs_conceded }}</td>
+        <td>{{ match.wickets_taken }}</td>
+        <td>{{ match.is_common_player }}</td>
+        <td>{{ match.match_won }}</td>
+    </tr>
+    {% endfor %}
+</table>

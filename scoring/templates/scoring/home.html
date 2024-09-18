@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scoring Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Cricket Scoring App</h1>
+    <div>
+        <a href="{% url 'add_player' %}" class="btn">Add Player</a>
+        <a href="{% url 'create_tournament' %}" class="btn">Create Tournament</a>
+        <a href="{% url 'view_stats' %}" class="btn">View Stats</a>
+    </div>
+</body>
+</html>
+
+
